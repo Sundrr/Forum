@@ -1,21 +1,33 @@
 <template>
   <base-container>
-    <div class="name-column">
-      <h4>
-        <router-link :to="sectionRoute">{{ name }}</router-link>
-      </h4>
-      <p>{{ description }}</p>
-    </div>
-    <div>
-      {{ threadCount }}
-    </div>
-    <div>
-      {{ postCount }}
-    </div>
-    <div>
-      <p>{{ lastUsername }}</p>
-      <p>{{ lastDate }}</p>
-    </div>
+    <template #name-block>
+      <router-link :to="sectionRoute">
+        <div class="name-column">
+          <h4>
+            {{ name }}
+          </h4>
+          <p>{{ description }}</p>
+        </div>
+      </router-link>
+    </template>
+    <template #stat-block>
+      <router-link :to="sectionRoute">
+        <div>
+          {{ threadCount }}
+        </div>
+      </router-link>
+    </template>
+    <template #count-block>
+      <div>
+        {{ postCount }}
+      </div>
+    </template>
+    <template #user-block>
+      <div>
+        <p>{{ lastUsername }}</p>
+        <p>{{ lastDate }}</p>
+      </div>
+    </template>
   </base-container>
 </template>
 
@@ -48,7 +60,21 @@ export default {
 
 
 <style scoped>
-.name-column {
-  width: 40rem;
+p {
+  color: #105289;
+  margin: 4px 0;
+}
+
+.name-column p {
+  color: #4c5d77;
+}
+
+h4 {
+  margin: 4px 0;
+}
+
+a {
+  color: #105289;
+  margin: 0;
 }
 </style>

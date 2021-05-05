@@ -1,24 +1,17 @@
 <template>
   <div class="nav">
     <section class="nav-structure">
-      <router-link :to="{ path: '/index' }">Список форумов</router-link>
-      <p v-if="currentSectionId">></p>
-      <router-link v-if="currentSectionId" :to="sectionRoute">{{
-        currentSectionName
-      }}</router-link>
-      <p v-if="currentThreadId">></p>
-      <router-link v-if="currentThreadId" :to="threadRoute">{{
-        currentThreadName
-      }}</router-link>
-    </section>
-    <section>
-      Личный раздел
-      Новых Сообщений
-      Ваши сообщения
-    </section>
-    <section>
-      Текущее время
-      Предыдущее посещение
+      <router-link :to="{ path: '/index' }"
+        ><h2>Список форумов</h2></router-link
+      >
+      <h2 v-if="currentSectionId">></h2>
+      <router-link v-if="currentSectionId" :to="sectionRoute"
+        ><h2>{{ currentSectionName }}</h2></router-link
+      >
+      <h2 v-if="currentThreadId">></h2>
+      <router-link v-if="currentThreadId" :to="threadRoute"
+        ><h2>{{ currentThreadName }}</h2></router-link
+      >
     </section>
   </div>
 </template>
@@ -66,12 +59,26 @@ export default {
 
 <style scoped>
 .nav-structure {
-  background-color: #eef5f9;
+  height: 3rem;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0 1rem;
+  background-color: #b4dcf3;
+  border-radius: 8px;
   display: flex;
   align-items: center;
 }
 
+.nav-structure * {
+  padding-right: 2px;
+}
+
 a {
-  color: #536482;
+  color: white;
+}
+
+h2 {
+  color: #105289;
+  font-size: 14px;
 }
 </style>

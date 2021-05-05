@@ -1,5 +1,5 @@
 <template>
-  <base-container>
+  <post-container>
     <div>
       <div>
         <p>{{ username }}</p>
@@ -7,12 +7,15 @@
       </div>
       <p>{{ text }}</p>
     </div>
-  </base-container>
+  </post-container>
 </template>
 
 
 <script>
+import PostContainer from "../ui/PostContainer.vue";
+
 export default {
+  components: { PostContainer },
   props: {
     id: { type: Number },
     username: { type: String },

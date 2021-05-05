@@ -21,6 +21,7 @@ class SectionListSchema(ma.SQLAlchemySchema):
     thread_count = fields.Integer()
     post_count = fields.Integer()
     created_dt = fields.DateTime(format='%Y-%m-%d %H:%M:%S%z')
+    username = fields.String()
 
     class Meta:
         model = Section

@@ -1,26 +1,34 @@
 <template>
-  <base-container>
-    <div class="name-column">
-      <h4>
-        <router-link :to="threadRoute">{{ name }}</router-link>
-      </h4>
-    </div>
-    <thread-paginator
-      :post-count="postCount"
-      :id="id"
-      :tag="tag"
-      :current-page="null"
-    ></thread-paginator>
-    <div>
-      {{ postCount }}
-    </div>
-    <div>
-      {{ viewCount }}
-    </div>
-    <div>
-      <p>{{ creator }}</p>
-      <p>{{ created }}</p>
-    </div>
+  <base-container @click="$router.push(threadRoute)" style="cursor: pointer">
+    <template #name-block>
+      <div class="name-column">
+        <h4>
+          {{ name }}
+        </h4>
+      </div>
+      <thread-paginator
+        :post-count="postCount"
+        :id="id"
+        :tag="tag"
+        :current-page="null"
+      ></thread-paginator>
+    </template>
+    <template #stat-block>
+      <div>
+        {{ postCount }}
+      </div>
+    </template>
+    <template #count-block>
+      <div>
+        {{ viewCount }}
+      </div>
+    </template>
+    <template #user-block>
+      <div>
+        <p>{{ creator }}</p>
+        <p>{{ created }}</p>
+      </div>
+    </template>
   </base-container>
 </template>
 
@@ -56,7 +64,17 @@ export default {
 
 
 <style scoped>
-.name-column {
-  width: 40rem;
+p {
+  color: #105289;
+  margin: 4px 0;
+}
+
+h4 {
+  margin: 4px 0;
+}
+
+a {
+  color: #105289;
+  margin: 0;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <header>
     <h3>{{ currentThreadName }}</h3>
-    <base-button link :to="newPostRoute">Ответить</base-button>
+    <base-button link :to="newPostRoute" mode="main">Ответить</base-button>
     <p>Сообщений: {{ postCount }}</p>
     <p>Страница {{ page }} из {{ pageCount }}</p>
     <thread-paginator

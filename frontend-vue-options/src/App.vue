@@ -20,6 +20,10 @@ export default {
 
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Verdana, Arial, Helvetica, sans-serif;
 }

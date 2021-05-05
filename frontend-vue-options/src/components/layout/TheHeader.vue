@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="main-header">
     <router-link :to="{path: '/index'}">
       <h1>ВелоФорум</h1>
     </router-link>
@@ -42,7 +42,9 @@ export default {
 header {
   width: 100%;
   height: 5rem;
+  padding: 1rem;
   background-color: #12A3EB;
+  border-radius: 8px;
   color: white;
   display: flex;
   justify-content: space-between;

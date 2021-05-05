@@ -1,8 +1,8 @@
 <template>
-  <button v-if="!link">
+  <button :class="mode" v-if="!link">
     <slot></slot>
   </button>
-  <router-link v-else :to="to">
+  <router-link :class="mode" v-else :to="to">
     <slot></slot>
   </router-link>
 </template>
@@ -20,6 +20,11 @@ export default {
       type: Object,
       required: false,
     },
+    mode: {
+      type: String,
+      required: false,
+      default: null,
+    },
   },
 };
 </script>
@@ -34,6 +39,16 @@ a {
   border: 1px solid #000;
   cursor: pointer;
   margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
   display: inline-block;
+  border-radius: 8px;
+}
+
+.main {
+  background-color: #12A3EB;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
 }
 </style>
